@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Getting started</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style2.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98278907-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-98278907-1');
+    </script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <div id="bar">
+                <script src="side.js"></script>
+        </div>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    
+                </div>
+            </nav>
+
+            <div class="stackedit__html">
+                <h2 id="getting-started">Getting started</h2>
+                <p style="text-align: justify;"><strong><span style="color: red;">I</span></strong><strong>ntegrative <span style="color: red;">G</span>enomic <span style="color: red;">A</span>nalysis <span style="color: red;">P</span>ipeline</strong> is a pipeline which can be used to generate nTBA values for any given sequences and also combine any other data with it for further analysis.</p>
+<p style="text-align: justify;">IGAP is written in <span style="color: #a9d18e;">Python 3</span>. It includes BayesPI2 software in binary form, which is available for Linux and OS X operating systems.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<h1>Installation:</h1>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">You can install the package for python 3 using this command:</p>
+<p style="text-align: justify;">python setup.py install</p>
+<p style="text-align: justify;">please run the following commands to install prerequire package</p>
+<p style="text-align: justify;">pip install numpy scipy scikit-learn</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">After installing the package, you should also install the <span style="color: red;">bedtools </span>and add it to the path in order to use the package. Please refer to this link for more info.</p>
+<p style="text-align: justify;"><a href="https://bedtools.readthedocs.io/en/latest/content/installation.html">https://bedtools.readthedocs.io/en/latest/content/installation.html</a></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">The main package also supports command line commands. You can run the command line version of the package using igap command inside of the terminal.</p>
+
+<p style="text-align: justify;">&nbsp;</p>
+<h1>git repository content:</h1>
+<p>&nbsp;</p>
+<p style="text-align: justify;">The repo has three subfolders:</p>
+<p style="text-align: justify;"><strong><span style="color: red;">Igap:</span></strong> Integrative genomic analysis pipeline source code and binaries.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><strong><span style="color: red;">Sample:</span></strong> This folder contains some sample files which shows how you can use the library.</p>
+<p style="text-align: justify;">Tools: This folder contains some tools to preprocess input data and prepare them for the package.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<h2>Sample folder:</h2>
+<p>&nbsp;</p>
+<p style="text-align: justify;">Sample folder is the best place to see how you can use the package. Let&rsquo;s take a look at it&rsquo;s contents:</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="color: red;">Additional:</span> this folder contains all of the files you require to run the demo sample.</p>
+<p style="text-align: justify;">Configs: This folder contains different config files which the application needs them in order to generate the output. You can see the content and learn how you should set the variables.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="color: red;">Experiment_data: </span>In our project, we combine genomic modification data with the ntba in order to generate our output features. You can see the structure of each file and be familiar with the standard input of the package for any of your desired dataset.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="color: red;">Fa_file: </span>In this folder, you can find the preprocessed fa files from the hg19 data set. These files are required in order to calculate nTBA values.</p>
+<p style="text-align: justify;"><span style="color: red;">Interaction:</span> in this folder, you can find a text file for each cell type for chromosome 21. These files generated from HiC data.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="color: red;">Pwm:</span> in this folder, you can find the position weight matrixes of each motif for computing the nTBA value.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="color: red;">Region:</span> This folder contains files for each specific region, for example, HOT, TSS and etc.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">1-ntba.py:&nbsp; This file read the fa files and generate nTBA value.</p>
+<p style="text-align: justify;">2-ntba_plot.py: Read nTBA generated files from the previous step and filter them by HOT, TSS, GENE and enhancer region. After that try to interpolate the missing points of each region and save the data.</p>
+<p style="text-align: justify;">3-gm_plot: The same thing like the previous step for genomic modification data in order to make them ready to combine with the nTBA values.</p>
+<p style="text-align: justify;">4-freq.py: Read all previous output and combine them with HiC data to calculate the frequency and generate the heat map plot.</p>
+<p style="text-align: justify;">5- clustering.py: Read the output of the previous step and generate feature vector per each bin and classify it into different clusters.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<h1>Usage:</h1>
+<p>&nbsp;</p>
+<h2>Run the sample project:</h2>
+<p>&nbsp;</p>
+<p style="text-align: justify;">You can simply import igap package inside of your python code and use it&rsquo;s functions. For more information about how you can use the functions you can take a look at the sample folder.</p>
+<p style="text-align: justify;">Inorder to run the sample project, you should execute the python files inside of sample folder in order to generate the feature vectors and classify each region of the chromosome.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: 13.0pt;">Cmd_sample.bash:</span></p>
+<p style="text-align: justify;">This file is a sample of how you can generate the outputs using the command line tools. Please type igap -h for more info about the command line tools.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<h1>Tools folder:</h1>
+<p style="text-align: justify;">This folder contains files which we used to convert datasets to our standard input format. These codes written in <span style="color: #70ad47;">Python2</span>. You can use it as follows.</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">Divide the hg19 dataset to our standard fa files:</p>
+<p style="text-align: justify;">python divide_chr_make_windows.py --In_path in/fastas --Chr 22 --Out_path out/chromosome --Header NAME</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">Generate region files:</p>
+<p style="text-align: justify;">For enhancer:</p>
+<p style="text-align: justify;">python enhancer_HOT_regions.py --In_path in/all_enhancers/sorted_all_tissues.bed --Out_path out --Chr ALL --File_type ENH --Merge_regions Y --Min_size 100</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">For HOT:</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">python enhancer_HOT_regions.py --In_path in/HOT_input.bed --Out_path out --Chr ALL --File_type HOT --Min_size 100</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">&nbsp;</p>
+<p style="text-align: justify;">For Gene and TSS region:</p>
+<p style="text-align: justify;">python genes_regions.py --In_path in/refFlat.txt --Gene_info in/human_gene_info_nov2017.csv --Out_path out</p>
+<h2 style='text-align:justify'><span lang=EN-US style='mso-ansi-language:EN-US'>API
+    Manual<o:p></o:p></span></h2>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+    
+    <h3 style='text-align:justify'><span lang=EN-US style='mso-ansi-language:EN-US'>Calculating
+    ntba value<o:p></o:p></span></h3>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US'>To calculate the ntba value for a sequence file,
+    you need to call the </span>calculate_ntba<span lang=EN-US style='mso-ansi-language:
+    EN-US'> function from </span>BayesPi_nTBA<span lang=EN-US style='mso-ansi-language:
+    EN-US'> class. <o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+    background:#2B2B2B'><span style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:
+    "Times New Roman";color:#CC7832;mso-fareast-language:EN-GB'>from </span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#A9B7C6;mso-fareast-language:EN-GB'>igap.bayespi_ntba </span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>import </span><span style='font-size:
+    9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>BayesPi_nTBA<o:p></o:p></span></p>
+    
+    <pre style='text-align:justify;background:#2B2B2B'><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>BayesPi_nTBA.calculate_ntba(chemical_potentials</span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>, </span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>reference_sequences</span><span style='font-size:
+    9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#CC7832;
+    mso-fareast-language:EN-GB'>, </span><span style='font-size:9.0pt;font-family:
+    Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;mso-fareast-language:
+    EN-GB'>iterations</span><span style='font-size:9.0pt;font-family:Menlo;
+    mso-fareast-font-family:"Times New Roman";color:#CC7832;mso-fareast-language:
+    EN-GB'>, </span><span style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:
+    "Times New Roman";color:#A9B7C6;mso-fareast-language:EN-GB'>pwm_folder</span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>, </span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>output_folder</span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#CC7832;
+    mso-fareast-language:EN-GB'>,</span><span style='font-size:9.0pt;font-family:
+    Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;mso-fareast-language:
+    EN-GB'>reuse_output</span><span style='font-size:9.0pt;font-family:Menlo;
+    mso-fareast-font-family:"Times New Roman";color:#CC7832;mso-fareast-language:
+    EN-GB'>, </span><span style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:
+    "Times New Roman";color:#A9B7C6;mso-fareast-language:EN-GB'>parallel_dict</span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>, </span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>use_interct=</span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#CC7832;
+    mso-fareast-language:EN-GB'>False, </span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>random_seed=</span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#CC7832;
+    mso-fareast-language:EN-GB'>False, </span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>only_collect=</span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#CC7832;
+    mso-fareast-language:EN-GB'>False, </span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>remove_temp=</span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#CC7832;
+    mso-fareast-language:EN-GB'>True,<span style='mso-spacerun:yes'>             </span></span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#A9B7C6;mso-fareast-language:EN-GB'>only_merge=</span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>False, </span><span style='font-size:
+    9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>input_folder=</span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#6A8759;
+    mso-fareast-language:EN-GB'>&quot;&quot;</span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#CC7832;
+    mso-fareast-language:EN-GB'>, </span><span style='font-size:9.0pt;font-family:
+    Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;mso-fareast-language:
+    EN-GB'>window_size=</span><span style='font-size:9.0pt;font-family:Menlo;
+    mso-fareast-font-family:"Times New Roman";color:#6897BB;mso-fareast-language:
+    EN-GB'>50</span><span lang=EN-US style='font-size:9.0pt;font-family:Menlo;
+    mso-fareast-font-family:"Times New Roman";color:#6897BB;mso-ansi-language:EN-US;
+    mso-fareast-language:EN-GB'>)</span><span lang=EN-US style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-ansi-language:EN-US;mso-fareast-language:EN-GB'><o:p></o:p></span></pre>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US'>Inputs:<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US'>chemical potentials</span><span
+    lang=EN-US style='mso-ansi-language:EN-US'>: a list of string which contains
+    chemical</span><span lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:
+    FA'> potentials which you want to calculate the ntba value for them, for
+    example </span><span style='mso-bidi-language:FA'>['none', '-10']<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>refrence_sequences</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: a. fa file in
+    </span><b><span style='mso-bidi-language:FA'>FASTA format</span></b><b><span
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'> </span></b><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>which contains sequence
+    information, as an example you can refer to additional /fa_file/group1.fa in
+    the sample folder.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>iterations</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: number of iterations<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>pwm_folder</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: a folder
+    which contains position weight matrix files, as an example you can refer to
+    additional/pwm in sample folder.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>output_folder</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: a path in string
+    which is used by the program to store all the outputs.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>reuse_output</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: if this option
+    is set to True, program will try to load all possible previously calculated
+    output and continue from the last step in the previous run.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>parallel_dict</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: Path of a
+    parallel file in str. You can configure parallel configuration of the
+    application using this file. You can define number of threads or set the
+    required variables in order to run the program on a cluster. As an example, you
+    can refer to </span><span style='mso-bidi-language:FA'>'additional/configs/parallel_options.txt'</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'> in sample
+    folder.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>use_interct</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: predicted
+    di-nucleotide dependent weight matrice by bayesPI (*.interct). If<span
+    style='mso-spacerun:yes'>                                    </span>specified,
+    the di-nucleotide model will be used. It should be stored in a same path as a
+    pwm file but the extension should be .interct instead of .mlp.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>random_seed</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: Should the
+    program use a fixed seed each time or a random seed for calculating the values.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>only_collect</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: If it’s true
+    it will skip the ntba calculation and start the second step to merge the
+    already calculated data which should be stored in input_folder.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>remove_temp</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: If it’s true,
+    it will automatically remove all the temp files after each step to reduce
+    needed storage.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>only_merge</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: If It’s true
+    it will skip the first two step and will try to just convert all dba files to
+    bed files and merge them together.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:#C00000;mso-ansi-language:EN-US;mso-bidi-language:FA'>input_folder:</span><span
+    lang=EN-US style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;
+    mso-bidi-language:FA'> If only_merge or only_collect are true, you need to
+    assign this variable to the folder which you stored all the calculation. (output_folder
+    of previous execution)<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:#C00000;mso-ansi-language:EN-US;mso-bidi-language:FA'>window_size:
+    </span><span lang=EN-US style='color:black;mso-themecolor:text1;mso-ansi-language:
+    EN-US;mso-bidi-language:FA'>length of the window for exporting ntba value (default
+    50).<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;mso-bidi-language:
+    FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;mso-bidi-language:
+    FA'>output:<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;mso-bidi-language:
+    FA'>A file containing ntba value of the for each chemical potential.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;mso-bidi-language:
+    FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;mso-bidi-language:
+    FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <h2 style='text-align:justify'><span lang=EN-US style='mso-ansi-language:EN-US;
+    mso-bidi-language:FA'>Summarize the ntba value for your interest regions<o:p></o:p></span></h2>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'>You can define your
+    interested regions in a bed file and merge them with the ntba values and
+    calculate the value over the center of those regions using </span><span
+    style='mso-bidi-language:FA'>preprocess_ntba_data</span><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'> function. Program will
+    use regression to infer the value of the missing points for each region.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+    background:#2B2B2B'><span style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:
+    "Times New Roman";color:#CC7832;mso-fareast-language:EN-GB'>from </span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#A9B7C6;mso-fareast-language:EN-GB'>igap.preprocess_ntba_data </span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>import </span><span style='font-size:
+    9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>DataPreprocessor<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+    background:#2B2B2B'><span style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:
+    "Times New Roman";color:#A9B7C6;mso-fareast-language:EN-GB'>DataPreprocessor.preprocess_ntba_data(config_file</span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>, </span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>output_folder</span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#CC7832;
+    mso-fareast-language:EN-GB'>, </span><span style='font-size:9.0pt;font-family:
+    Menlo;mso-fareast-font-family:"Times New Roman";color:#AA4926;mso-fareast-language:
+    EN-GB'>min_overlap</span><span style='font-size:9.0pt;font-family:Menlo;
+    mso-fareast-font-family:"Times New Roman";color:#A9B7C6;mso-fareast-language:
+    EN-GB'>=</span><span style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:
+    "Times New Roman";color:#6897BB;mso-fareast-language:EN-GB'>1E-9</span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#A9B7C6;mso-fareast-language:EN-GB'>)<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <h2><span lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>Inputs:<o:p></o:p></span></h2>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>config_file</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: <o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'>path of a json file which
+    you need to define all parameters to configure the execution. As an example, you
+    can refer to additional/configs/preprocess_ntba_mix.json in sample folder.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'>There are several
+    parameters which you need to specify which you can read more about them in following.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>region_files</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: a list which
+    you can put several bed files in it to specify your interest region. For each
+    of them you need to assign a <span style='color:#C00000'>name </span><span
+    style='color:black;mso-themecolor:text1'>and path of the bed file in
+    bed_file_address. The program will calculate each one of them starting from the
+    first one. Your bed file needs to have a standard template which you can refer
+    to additional/region folder in sample.<o:p></o:p></span></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span style='color:red;
+    mso-bidi-language:FA'>ntba_bed_files_address</span><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>: </span><span
+    lang=EN-US style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;
+    mso-bidi-language:FA'><span style='mso-spacerun:yes'> </span>A list of string
+    which you need to put the address of ntba files which you calculated before per
+    each chemical potential. If you want to calculate it for multiple chromosomes
+    you need to use wild card symbol to address all of the ntba files per each
+    chemical in one line.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span style='color:red;
+    mso-bidi-language:FA'>chromosome</span><span lang=EN-US style='color:black;
+    mso-themecolor:text1;mso-ansi-language:EN-US;mso-bidi-language:FA'>: chromosome
+    number in string, if you want to calculate it for multiple chromosomes use ‘mix’
+    instead.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>output_folder</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: a path in string
+    which is used by the program to store all the outputs.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>min_overlap</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: Acceptable overlap
+    between interest regions and ntba values.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span class=Heading2Char><span
+    style='font-size:13.0pt'><o:p>&nbsp;</o:p></span></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span class=Heading2Char><span
+    style='font-size:13.0pt'><o:p>&nbsp;</o:p></span></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span class=Heading2Char><span
+    style='font-size:13.0pt'><o:p>&nbsp;</o:p></span></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span class=Heading2Char><span
+    style='font-size:13.0pt'><o:p>&nbsp;</o:p></span></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span class=Heading2Char><span
+    style='font-size:13.0pt'>output</span></span><span lang=EN-US style='color:
+    black;mso-themecolor:text1;mso-ansi-language:EN-US;mso-bidi-language:FA'>:<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;mso-bidi-language:
+    FA'>Three different files per each chemical, one of them contains all the
+    points per each region, and the other two contains mean and sum of the values
+    of all the regions. You can use those files to draw a plot of ntba value for
+    your region.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;mso-bidi-language:
+    FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <h2 style='text-align:justify'><span lang=EN-US style='mso-ansi-language:EN-US;
+    mso-bidi-language:FA'><span style='mso-spacerun:yes'> </span>Preprocess Histon
+    data:<o:p></o:p></span></h2>
+    
+    <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:
+    FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'>You can preprocess the Histon
+    data in a same way as the previous step, for doing so you need to call </span><span
+    style='mso-bidi-language:FA'>process_histon_data</span><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'> function from </span><span
+    style='mso-bidi-language:FA'>HistDataPreproces</span><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'>s.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+    background:#2B2B2B'><span style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:
+    "Times New Roman";color:#CC7832;mso-fareast-language:EN-GB'>from </span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#A9B7C6;mso-fareast-language:EN-GB'>igap.preprocess_histon_data </span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>import </span><span style='font-size:
+    9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>HistDataPreprocess<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+    background:#2B2B2B'><span style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:
+    "Times New Roman";color:#A9B7C6;mso-fareast-language:EN-GB'>HistDataPreprocess.process_histon_data(</span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#6A8759;mso-fareast-language:EN-GB'>'additional/configs/preprocess_gm_data.json'</span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>, </span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#6A8759;
+    mso-fareast-language:EN-GB'>'output/3'</span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>)<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span class=Heading2Char><span
+    style='font-size:13.0pt'>input</span></span><span lang=EN-US style='mso-ansi-language:
+    EN-US;mso-bidi-language:FA'>:<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>config_file</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: like the
+    previous function, but this time you need to define two set of parameters for HOT
+    and TSS regions. Please refer to additional/configs/preprocess_gm_data.json as
+    an example.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>output_folder</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: a path in string
+    which is used by the program to store all the outputs.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span class=Heading2Char><span
+    style='font-size:13.0pt'>output</span></span><span lang=EN-US style='mso-ansi-language:
+    EN-US;mso-bidi-language:FA'>:<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;mso-bidi-language:
+    FA'>Three different files per each cell types, one of them contains all the
+    points per each region, and the other two contains mean and sum of the values
+    of all the regions. In each one of them, you can find the value of each modifications
+    in columns.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;mso-bidi-language:
+    FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;mso-bidi-language:
+    FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:black;mso-themecolor:text1;mso-ansi-language:EN-US;mso-bidi-language:
+    FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <h2 style='text-align:justify'><span lang=EN-US style='mso-ansi-language:EN-US;
+    mso-bidi-language:FA'>Frequency:<o:p></o:p></span></h2>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'>To calculate the frequency
+    and draw the heat map plot you can use </span><span style='mso-bidi-language:
+    FA'>calculate_frequency</span><span lang=EN-US style='mso-ansi-language:EN-US;
+    mso-bidi-language:FA'> function from </span><span style='mso-bidi-language:
+    FA'>Frequency</span><span lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:
+    FA'> class.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+    background:#2B2B2B'><span style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:
+    "Times New Roman";color:#CC7832;mso-fareast-language:EN-GB'>from </span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#A9B7C6;mso-fareast-language:EN-GB'>igap.frequency </span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>import </span><span style='font-size:
+    9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>Frequency<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+    background:#2B2B2B'><span style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:
+    "Times New Roman";color:#A9B7C6;mso-fareast-language:EN-GB'>Frequency.calculate_frequency(</span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#6A8759;mso-fareast-language:EN-GB'>'additional/configs/freq.json'</span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>, </span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#6A8759;
+    mso-fareast-language:EN-GB'>'output/4'</span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>)<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'>inputs:<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span style='color:red;
+    mso-bidi-language:FA'>config_file_address</span><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>: </span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>path of a json
+    file which you need to define all parameters to configure the execution. As an example,
+    you can refer to additional/configs/freq.json in sample folder.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'>There are several
+    parameters which you need to specify which you can read more about them in following.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span style='color:red;
+    mso-bidi-language:FA'>config</span><span lang=EN-US style='mso-ansi-language:
+    EN-US;mso-bidi-language:FA'>: You need to create an entry per each of your
+    region in this list, each entry needs to have a name, bed_file path of your
+    interest regions, chr_file (all_data output file of previous function) and
+    cells which you need to define an entry per each of your desire cells.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>win_length</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: Resolution of
+    your HIC data<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>potentials</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: a list of all
+    chemical potentials in str<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>chromosome</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: You need to
+    define the chromosome which you want to do the calculation for it.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>histon_modification</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: name of the
+    modifications which you want to process.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>cell_type_config</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: path to the
+    HIC data for each of your cell type.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>output_folder</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: a path in string
+    which is used by the program to store all the outputs.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <h2 style='text-align:justify'><span lang=EN-US style='mso-ansi-language:EN-US;
+    mso-bidi-language:FA'>output:<o:p></o:p></span></h2>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'>Frequency of interaction among
+    different regions, per each chemical and cell types.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <h2 style='text-align:justify'><span lang=EN-US style='mso-ansi-language:EN-US;
+    mso-bidi-language:FA'>Clustering:<o:p></o:p></span></h2>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'>For clustering different
+    regions of chromosome based on ntba values, you need to call process_features function
+    from igap.features_manager and then based on the calculated feature you can
+    cluster regions using your desire clustering algorithm. For an example of how
+    you can use this data to calculate the cluster members you can refer to sample
+    five.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+    background:#2B2B2B'><span style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:
+    "Times New Roman";color:#CC7832;mso-fareast-language:EN-GB'>from </span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#A9B7C6;mso-fareast-language:EN-GB'>igap.features_manager </span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>import </span><span style='font-size:
+    9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>FeaturesManager<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+    background:#2B2B2B'><span style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:
+    "Times New Roman";color:#A9B7C6;mso-fareast-language:EN-GB'>data</span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>, </span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;
+    mso-fareast-language:EN-GB'>normalized = FeaturesManager.process_features(files</span><span
+    style='font-size:9.0pt;font-family:Menlo;mso-fareast-font-family:"Times New Roman";
+    color:#CC7832;mso-fareast-language:EN-GB'>, </span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#6A8759;
+    mso-fareast-language:EN-GB'>'output/5'</span><span style='font-size:9.0pt;
+    font-family:Menlo;mso-fareast-font-family:"Times New Roman";color:#CC7832;
+    mso-fareast-language:EN-GB'>, </span><span style='font-size:9.0pt;font-family:
+    Menlo;mso-fareast-font-family:"Times New Roman";color:#A9B7C6;mso-fareast-language:
+    EN-GB'>cell)<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <h2 style='text-align:justify'><span lang=EN-US style='mso-ansi-language:EN-US;
+    mso-bidi-language:FA'>inputs:<o:p></o:p></span></h2>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>files_list</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: csv files
+    which been calculated using frequency function<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>output_folder</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: a path in string
+    which is used by the program to store all the outputs.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='color:red;mso-ansi-language:EN-US;mso-bidi-language:FA'>tag_name</span><span
+    lang=EN-US style='mso-ansi-language:EN-US;mso-bidi-language:FA'>: Custom name
+    for distinguishing output files.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'><o:p>&nbsp;</o:p></span></p>
+    
+    <h2 style='text-align:justify'><span lang=EN-US style='mso-ansi-language:EN-US;
+    mso-bidi-language:FA'>output:<o:p></o:p></span></h2>
+    
+    <p class=MsoNormal style='text-align:justify'><span lang=EN-US
+    style='mso-ansi-language:EN-US;mso-bidi-language:FA'>It will process provided
+    data and provide you the normalized and raw value which can be used to cluster
+    the regions.<o:p></o:p></span></p>
+    
+    <p class=MsoNormal><o:p>&nbsp;</o:p></p>
+    
+                
+</div>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+
+</html>

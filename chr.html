@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Figures</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style2.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98278907-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-98278907-1');
+    </script>
+    <script>
+        // Get the modal
+        function showmodal(image_name) {
+            var modal = document.getElementById("myModal");
+
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            var img = document.getElementById(image_name);
+            var link = document.getElementById("modala");
+            var modalImg = document.getElementById("modalimage");
+            var captionText = document.getElementById("caption");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            link.href = img.src;
+            captionText.innerHTML = img.alt;
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <style>
+        div.gallery {
+            border: 1px solid #ccc;
+            width: 300px;
+            height: 300px;
+        }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 300px;
+            height: 300px;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .responsive {
+            padding: 40px 40px;
+            float: left;
+            width: 300px;
+
+        }
+
+        @media only screen and (max-width: 700px) {
+            .responsive {
+                width: 600px;
+                margin: 6px 0;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .responsive {
+                width: 1200px;
+            }
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        #myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #myImg:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            text-align: justify;
+            height: 150px;
+        }
+
+        /* Add Animation */
+        .modal-content,
+        #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <div id="bar">
+            <script src="side.js"></script>
+        </div>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+
+                </div>
+            </nav>
+
+            <h2 id="chr1"></h2>
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <a id="modala" target="_blank" href="images/chr/chr1/chr1_mcf7_75per.png">
+                    <img class="modal-content" id="modalimage" src="images/chr/chr1/chr1_mcf7_75per.png" alt="MCF7"
+                        width="400" height="400">
+                </a>
+                <div id="caption"></div>
+            </div>
+
+
+
+
+            <div class="responsive">
+                <div class="gallery">
+                    <img onclick="javascript:showmodal('img1')" id="img1" src="images/chr/chr1/1.png" alt="nonspecific TF-DNA binding affinity"
+                        width="400" height="400">
+                    <div class="desc">nonspecific TF-DNA binding affinity</div>
+                </div>
+            </div>
+
+
+            <div class="responsive">
+                <div class="gallery">
+                    <img onclick="javascript:showmodal('img2')" id="img2" src="images/chr/chr1/2.jpg" alt="epigenomic modification"
+                        width="400" height="400">
+                    <div class="desc">epigenomic modification</div>
+                </div>
+            </div>
+
+            <div class="responsive">
+                <div class="gallery">
+                    <img onclick="javascript:showmodal('img3')" id="img3" src="images/chr/chr1/3.jpg" alt="enrichment of nTBA and epigenomic modification"
+                        width="400" height="400">
+                    <div class="desc">enrichment of nTBA and epigenomic modification</div>
+                </div>
+            </div>
+
+            <div class="responsive">
+                <div class="gallery">
+                    <img onclick="javascript:showmodal('img4')" id="img4" src="images/chr/chr1/4.png" alt="clustering of genomic window bins"
+                        width="400" height="400">
+                    <div class="desc">clustering of genomic window bins</div>
+                </div>
+            </div>
+            <div class="responsive">
+                <div class="gallery">
+                    <img onclick="javascript:showmodal('img5')" id="img5" src="images/chr/chr1/chr1_gm12878_75per.png"
+                        alt="GM12878" width="400" height="400">
+                    <div class="desc">GM12878</div>
+                </div>
+            </div>
+            <div class="responsive">
+                <div class="gallery">
+                    <img onclick="javascript:showmodal('img6')" id="img6" src="images/chr/chr1/chr1_k562_75per.png"
+                        alt="K562" width="400" height="400">
+                    <div class="desc">K562</div>
+                </div>
+            </div>
+            <div class="responsive">
+                <div class="gallery">
+                    <img onclick="javascript:showmodal('img7')" id="img7" src="images/chr/chr1/chr1_mcf7_75per.png"
+                        alt="MCF7" width="400" height="400">
+                    <div class="desc">MCF7</div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+<div id="hello"></div>
+<script>
+    function getURLParameter(name) {
+        return decodeURI(
+            (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1]
+        );
+    }
+    var chr_val = getURLParameter("chr");
+    document.getElementById("chr1").innerHTML = "Human chromosome " + chr_val + " figures";
+    document.getElementById('img1').src = "images/chr/chr" + chr_val + "/1.png";
+    document.getElementById('img2').src = "images/chr/chr" + chr_val + "/2.jpg";
+    document.getElementById('img3').src = "images/chr/chr" + chr_val + "/3.jpg";
+    document.getElementById('img4').src = "images/chr/chr" + chr_val + "/4.png";
+    document.getElementById('img5').src = "images/chr/chr" + chr_val + "/chr" + chr_val + "_gm12878_75per.png";
+    document.getElementById('img6').src = "images/chr/chr" + chr_val + "/chr" + chr_val + "_k562_75per.png";
+    document.getElementById('img7').src = "images/chr/chr" + chr_val + "/chr" + chr_val + "_mcf7_75per.png";
+
+
+    document.getElementById('img1').alt = "For gene, TSS, HOT region, and the five types of tissue-specific human enhancers that are located in human chromosome " + chr_val + " , we plotted the distribution of nonspecific TF binding affinity at +/-500 bp centered in TSS or the center of gene/enhancer/HOT region, respectively. The first row (upper panel) for each chromosome presents the total sum of  nonspecific binding affinities of each genomic feature (e.g., gene, TSS, enhancer, or HOT region) while the second row (lower panel) represents the mean of nTBA, where 0 represents either the center of gene/enhancer/HOT or TSS. Predictions from different chemical potentials (or TF concentrations) are shown by different colors, respectively.";
+    document.getElementById('img2').alt = "For all TSSs and HOT regions located in human chromosome " + chr_val + ", the distributions of nonspecific TF-DNA binding affinity, histone modifications (H3k27ac, H3k4me1, and H3k4me3), Pol2 expression, and nucleosome occupancy (Pol2 and Dnase) in K562, GM12878, and MCF7 cell lines are illustrated, respectively. HOT regions are obtained from ENCODE predictions (e.g. P<0.05 in any conditions). The average Z-scores of aforementioned modifications and the total nonspecific TF-DNA binding affinities are plotted in different colors, where zero represents either TSS or the center of HOT regions (e.g., +/-500bp from the center). H3K27ac and H3K4me1 are enhancer markers, H3K4me3 is promoter marker, Pol2 represents gene expression activity, and Dnase indicates nucleosome occupancy in the genome. ";
+    document.getElementById('img3').alt = "For a pair-wise intra-chromosomal interaction, enrichments of nonspecific binding affinity, histone modifications (H3k27ac, H3k4me1, H3k4me3, H3K27me3, H3K9me3), CTCF binding, Pol2 expression, and nucleosome occupancy (Dnase) are tested based on Hi-C experiments of MCF7, K562, and GM12878 cell lines, respectively. Chromosome " + chr_val + "is divided into equal sized bins (250Kb resolution) and experimental datasets are preprocessed, normalized, and converted to Zscores before the further study. Here, a green-red color map represents a negative-positive Zscores from a Hi-C experiment: an interaction colored by red and green color means the interaction is more and less frequent than the average of genome-wide interactions, respectively. A yellow-blue color map represents a positive-negative Z-value from the rank-sum test. This is used to evaluate the enrichment of a genome modification in a pair-wise intra-chromosomal interaction (Zscore>0) versus that in background interactions such as the mean of 50 randomly selected intra-chromosomal interactions. In the figure, white and black color represent no interaction and no enrichment, respectively. Please note that we only consider genome modifications around both TSSs and HOT regions (e.g., +/-500bp center) for a pair-wise intra-chromosomal interaction. If multiple TSSs or HOT regions located in the same window bin then an average of them will be used in the enrichment test. H3K27ac and H3K4me1 are enhancer markers, H3K4me3 is a promoter marker, H3K27me3 and H3K9me3 are gene repress markers, CTCF controls chromatin loops, Pol2 represents gene expression activity, and Dnase indicates nucleosome occupancy in the genome.";
+    document.getElementById('img4').alt = "In three cancer cell lines, both the frequency of intra-chromosomal interactions (Z-score>0) and the frequency of highly enriched (Z-values≥3) genome modifications in genomic window bins (250Kb resolution) are shown for human chromosome " + chr_val + ". In the heat map, the three clusters are obtained by applying our clustering methods on the frequencies of highly enriched genome modifications in window bins, where the clusters 1 (red), 2 (green), and 3 (blue) represent types I, II, and III genomic window bins, respectively, in intra-chromosomal interactions which drawn in box and scatter plot. Low, medium and high chromosomal interaction in genomic window bins type I, II and III is observable, respectively.";
+    document.getElementById('img5').alt = "Outer most white-grey banded circle is ideogram for chromosome " + chr_val + ". Second circle (red) represents nTBA for potential -10. Third circle (yellow) represents type I, II and III genomic window bins (red, green, blue tiles respectively). Fourth circle (green) represents number of genes. Fifth circle (orange) represents number of HOT regions. Green and Yellow threads in center represent intra-chromosomal HiC interactions with Z-score >= 1. All interactions between 1MB and 10MB are in yellow. Interactions spanning above 10MB are in green.";
+    document.getElementById('img6').alt = "Outer most white-grey banded circle is ideogram for chromosome " + chr_val + ". Second circle (red) represents nTBA for potential -10. Third circle (yellow) represents type I, II and III genomic window bins (red, green, blue tiles respectively). Fourth circle (green) represents number of genes. Fifth circle (orange) represents number of HOT regions. Green and Yellow threads in center represent intra-chromosomal HiC interactions with Z-score >= 1. All interactions between 1MB and 10MB are in yellow. Interactions spanning above 10MB are in green.";
+    document.getElementById('img7').alt = "Outer most white-grey banded circle is ideogram for chromosome " + chr_val + ". Second circle (red) represents nTBA for potential -10. Third circle (yellow) represents type I, II and III genomic window bins (red, green, blue tiles respectively). Fourth circle (green) represents number of genes. Fifth circle (orange) represents number of HOT regions. Green and Yellow threads in center represent intra-chromosomal HiC interactions with Z-score >= 1. All interactions between 1MB and 10MB are in yellow. Interactions spanning above 10MB are in green.";
+
+</script>
+
+</html>

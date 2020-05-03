@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>IGAP</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style2.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-98278907-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-98278907-1');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140380981-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-140380981-1');
+</script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <div id="bar">
+                <script src="side.js"></script>
+        </div>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    
+                </div>
+            </nav>
+
+            <div class="stackedit__html">
+                <h1>Integrative genome anaylsis pipline: nonspecific TF-DNA binding affinity integrated with genomic
+                    signatures reveals important regulatory details of genome.</h1>
+                <p><img
+                        src="images/supporter/OUS_logo_eng.jpg" alt="Oslo University Hospital"
+                        title="Oslo University Hospital" width="150" hspace="20" align="middle"> <img
+                        src="images/supporter/helse-sor-ost.jpg"
+                        alt="This work was supported by the South-Eastern Norway Regional Health Authority"
+                        title="This work was supported by the South-Eastern Norway Regional Health Authority"
+                        width="150" align="middle"></p>
+                <h2 id="authors">Authors</h2>
+                <p><a href="mailto:Alireza.Sahaf.Naeini@rr-research.no">Alireza Sahaf Naeini</a><sup>1,2</sup>, <a
+                        href="mailto:Amna.Farooq@rr-research.no">Amna Farooq</a><sup>1,2</sup>, <a
+                        href="mailto:magnar.bjoras@ntnu.no">Magnar Bjørås</a><sup>3</sup>, and <a
+                        href="mailto:Junbai.Wang@rr-research.no">Junbai Wang</a><sup>1</sup></p>
+                <p><sup>1</sup>Department of Pathology, Norwegian Radium Hospital, PO Box 4953 Nydalen, 0424 Oslo,
+                    Norway</p>
+                <p><sup>2</sup>Authors have equal contribution</p>
+                <p><sup>3</sup>Department of Cancer Res and Molecular Medicine,
+                    Norwegian University of Science and Technology
+                    (NTNU), N-7489 Trondheim, Norway</p>
+                <h2 id="introduction">Introduction</h2>
+                <p>Human genome is a regulatory jungle where regulation happens in multi-dimensional fashion. While biophysical factors like Non-specific Transcription factor Binding Affinity (nTBA) act prior to sequence level, there are factors acting at sequence level of genome and above sequence level as well. Sequence level regulatory features like enhancers, Transcription Start Site, and High Occupancy Target (HOT) regions may play equally important role in genome regulation along above sequence level features like histone modifications and intra-chromosomal interactions. This multidimensionality of regulation compels inclusion of maximum factors for proper understanding of regulatory landscape of human genome. However, complex nature of TF-DNA binding makes nTBA calculation a computationally exhaustive task. We present here a robust algorithm for calculation of nTBA. In order to integrate major biophysical, genetic and epigenetic features involved in genome regulation, we also present a user-friendly package Integrative Genome Analysis Pipeline (IGAP). This integrative approach not only helped us to segregate highly Active Genomic Zones but also lead us to discover a novel gene regulatory model explaining nTBA and HOT guided search for true transcription factor binding site.</p>
+                <h2 id="references">References</h2>
+                <ol>
+                    <li>BayesPI - a new model to study protein-DNA interactions: a case study of condition-specific
+                        protein binding parameters for Yeast transcription factors. Wang J, Morigen. <em>BMC
+                            Bioinformatics</em>. 2009 Oct 20;10:345. doi: 10.1186/1471-2105-10-345. <a
+                            href="https://www.ncbi.nlm.nih.gov/pubmed/19857274">[PMID:19857274]</a></li>
+                    <li>Quality versus accuracy: result of a reanalysis of protein-binding microarrays from the DREAM5
+                        challenge by using BayesPI2 including dinucleotide interdependence. Wang J. <em>BMC
+                            Bioinformatics</em>. 2014 Aug 27;15:289. doi: 10.1186/1471-2105-15-289. <a
+                            href="https://www.ncbi.nlm.nih.gov/pubmed/25158938">[PMID:25158938]</a></li>
+                    <li>BayesPI-BAR: a new biophysical model for characterization of regulatory sequence variations.
+                        Wang J, Batmanov K. <em>Nucleic Acids Res.</em> 2015 Dec 2;43(21):e147. doi: 10.1093/nar/gkv733
+                        <a href="https://www.ncbi.nlm.nih.gov/pubmed/26202972">[PMID:26202972]</a></li>
+                    <li>Integrative whole-genome sequence analysis reveals roles of regulatory mutations in BCL6 and
+                        BCL2 in follicular lymphoma. Batmanov K, Wang W, Bjoras M, Delabie J, Wang J. <em>Sci Rep.</em>
+                        2017 Aug 1;7(1):7040. doi: 10.1038/s41598-017-07226-4. <a
+                            href="https://www.ncbi.nlm.nih.gov/pubmed/28765546">[PMID:28765546]</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+
+</html>
